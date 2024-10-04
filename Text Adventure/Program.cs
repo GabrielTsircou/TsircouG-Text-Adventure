@@ -1,70 +1,82 @@
 ﻿using System.ComponentModel.Design;
 
-namespace Text_Adventure
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("wake up in the morning fellin like p diddy");
-            Console.WriteLine("[please leave me alone] or [YES ZADDY]");
+Console.WriteLine("____  _____  ____");
+Console.WriteLine("||  | ||   | ||  | ");
+Console.WriteLine("||-<  ||---| ||  |");
+Console.WriteLine("||  | ||   | ||  |");
+Console.WriteLine("||__/ ||   | ||__/");
+Console.WriteLine("");
+Console.WriteLine("By GABRIEL TSIRCOU");
+Console.WriteLine("");
+Console.WriteLine("Options to pick from are in [square brackets], narration are in (parenthases), and speech are in plaintext.");
+Console.WriteLine("Make sure you don't misspell anything, as it'll fail and you'll probably have to restart.");
+Console.WriteLine("");
+Console.WriteLine("[MAIN STORY] or [DEBUG]");
+//makes input from the console readable
+string input = Console.ReadLine();
+//spits out the input
+Console.WriteLine("NOW BOOTING: [" + input + "]");
 
-            string input = Console.ReadLine();
-            Console.WriteLine(input);
-            if (input == "please leave me alone")
+if (input == "DEBUG")
+{
+    Console.WriteLine("BOOTING UP TEST SIMULATION...");
+    Console.WriteLine("please work");
+    Console.WriteLine("[1] or [2] or [more]");
+    input = Console.ReadLine();
+    if (input == "1")
+    {
+        Console.WriteLine("raaaa");
+    }
+    else if (input == "2")
+    {
+        Console.WriteLine("why does nothing ever work");
+    }
+    else if (input == "more")
+    {
+        Console.WriteLine("[3] or [4] or [even more]");
+        input = Console.ReadLine();
+        if (input == "3")
+        {
+            Console.WriteLine("boooo");
+        }
+        else if (input == "4")
+        {
+            Console.WriteLine("why cant i write functional code");
+        }
+        else if (input == "even more")
+        {
+            Console.WriteLine("[5] or [6]");
+            input = Console.ReadLine();
+            if (input == "5")
             {
-                Console.WriteLine("dont care TIME FOR THE DIDDY GAMES!!!!!!!!!!!!!!!");
-                Console.WriteLine("(you see some stuff to defend yourself nearby. what do you grab?)");
-                Console.WriteLine("[bottle of baby oil on a nearby table] or [diddy's pistol strapped to his side]");
-                Console.ReadLine();
-                if (input == "bottle of baby oil on a nearby table")
-                {
-                    Console.WriteLine("(KABLAM!)");
-                    Console.WriteLine("(holy sht you just killed diddy)");
-                    Console.WriteLine("congrats you won");
-                }
-                else if (input == "diddy's pistol strapped to his side")
-                {
-                    Console.WriteLine("(you grab his pistol and wrestle if off of his oily hip. who do you point it at?)");
-                    Console.WriteLine("[diddy] or [yourself]");
-                    Console.ReadLine();
-                    if (input == "diddy")
-                    {
-                        Console.WriteLine("(you swing the gun on him)");
-                        Console.WriteLine("dawg what-");
-                        Console.WriteLine("(POW!)");
-                        Console.WriteLine("you did it yay");
-                    }
-                    else if (input == "yourself")
-                    {
-                        Console.WriteLine("(you swing the pistol onto yourself, andddddhglkfb jsbni ----.fsfs-f-.s.-f..");
-                        Console.WriteLine("[ERROR]");
-                        Console.WriteLine("[ERROR]");
-                        Console.WriteLine("[ERROR]");
-                        Console.WriteLine("[INVALID TIMELINE ENTERED]");
-                        Console.WriteLine("{REWRITING...]");
-                        Console.WriteLine("[REWRITE COMPLETE. RESUMING SIMULATION]");
-                        Console.WriteLine("(you swing the gun on him)");
-                        Console.WriteLine("dawg what-");
-                        Console.WriteLine("(POW!)");
-                        Console.WriteLine("you did it yay");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("nuh uh");
-                }
+                Console.WriteLine("please let the nightmare end");
             }
-            else if (input == "YES ZADDY")
+            else if (input == "6")
             {
-                Console.WriteLine("consent ew");
+                Console.WriteLine("please let me die");
             }
             else
             {
-                Console.WriteLine("WRONG ANSWER *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *reload* *POW!* *POW!* *POW!* *POW!* *POW!* *P");
+                Console.WriteLine("GRAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             }
         }
+        else
+        {
+            Console.WriteLine("WRONG ANSWER *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *reload* *POW!* *POW!* *POW!* *POW!* *POW!* *P");
+        }
+    }
+    else
+    {
+        Console.WriteLine("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
     }
 }
-// gettin FREAKY in command line........ 👅👅👅
-//i NEED to kill myself
+else if (input == "MAIN STORY")
+{
+    Console.WriteLine("BEGINNING SIMULATION...");
+    Console.WriteLine("...");
+    Console.WriteLine("uhh i dont have anything right now oops");
+}
+else
+{
+    Console.WriteLine("haha you messed up have fun reloading the program");
+}
