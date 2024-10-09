@@ -1,25 +1,26 @@
-﻿using Text_Adventure;
+﻿using System.Security.Cryptography.X509Certificates;
+using Text_Adventure;
 
 namespace StoryParts
 {
-    public class parts
+    public class Parts
     {
         public static void Please()
         {
             Program.staggerText("if you can read this somethings working!");
         }
-        public static void MainMenu()
+        public static void Start()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("_____ __ __ ______ _____  __     _____ _____ _____");
+            Console.WriteLine("_____ __ __ _____ ____  __    _____ _____ _____");
             Thread.Sleep(200);
-            Console.WriteLine("||  | ||  | ||     ||   | ||     ||  | ||  | ||  |");
+            Console.WriteLine("||  | ||  | ||    ||  | ||    ||  | ||  | ||  |");
             Thread.Sleep(200);
-            Console.WriteLine("||  | ||  | ||__   ||--/  ||     ||  | ||--| ||  |");
+            Console.WriteLine("||  | ||  | ||_   ||-/  ||    ||  | ||--| ||  |");
             Thread.Sleep(200);
-            Console.WriteLine("||  | || /  ||     ||   | ||     ||  | ||  | ||  |");
+            Console.WriteLine("||  | || /  ||    ||  | ||    ||  | ||  | ||  |");
             Thread.Sleep(200);
-            Console.WriteLine("||__| ||/   ||____ ||   | ||____ ||__| ||  | ||__/");
+            Console.WriteLine("||__| ||/   ||___ ||  | ||___ ||__| ||  | ||__/");
             Thread.Sleep(100);
             Console.ResetColor();
             Thread.Sleep(100);
@@ -27,7 +28,7 @@ namespace StoryParts
             Console.WriteLine("By GABRIEL TSIRCOU");
             Console.WriteLine("");
             Thread.Sleep(300);
-            Console.WriteLine("Narration are in (Parentheses), speech are in plaintext and are in different colors for different people...");
+            Console.WriteLine("Narration are in (Parentheses), speech are in plaintext, with you in white and in different colors for different people...");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("...And options to pick from are in yellow and in [brackets].");
             Console.ResetColor();
@@ -52,15 +53,15 @@ namespace StoryParts
             Console.WriteLine("(You walk up to the center console and turn it on.)");
             Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine("Please Enter Credentials:");
+            Console.WriteLine();
             Console.ResetColor();
             Thread.Sleep(1000);
-            Console.WriteLine("");
-            Console.WriteLine("(You don't remember your passkey. You try not to stress about it as it was given to you an hour ago, but you still feel bad)");
+            Console.WriteLine("(You don't remember your passkey. You try not to stress about it as it was given to you an hour ago, but you still feel bad.)");
             Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine("([CHECK] your pockets for notes, [ASK] someone for help, or [GUESS] and hope you get lucky.)");
             Console.ResetColor();
         }
@@ -84,45 +85,217 @@ namespace StoryParts
         }
         public static void InAsk()
         {
+            Console.WriteLine();
             Console.WriteLine("(You call someone over to help you sign in to the console.)");
+            Thread.Sleep(1000);
+            Console.WriteLine("(A security officer walks over to your side.)");
+            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Alright, what seems to be the issue?");
+            Thread.Sleep(1000);
+            Console.ResetColor();
+            Console.WriteLine("I'm having trouble signing in to the center console.");
+            Thread.Sleep(1000);
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Ah, great, a sprout, (mumble mumble).");
+            Thread.Sleep(1000);
+            Console.WriteLine("Ugh, fine. I'll let you in on a little secret that goes around among the engineers here.");
+            Thread.Sleep(1000);
+            Console.WriteLine("If you just slam the underside of your desk, it'll instantly give you administer access over the entire plant.");
+            Thread.Sleep(1000);
+            Console.WriteLine("Now don't bother me again, I already have a bunch of stuff to do, and it's only the beginning of the day.");
+            Thread.Sleep(1000);
+            Console.ForegroundColor= ConsoleColor.Yellow;
+            Console.WriteLine();
+            Console.WriteLine("(Press [ENTER] to continue.)");
+            string input = Console.ReadLine();
+            
+            Console.ResetColor();
+            if (input == "")
+            {
+                Console.WriteLine();
+                Console.WriteLine("(As he walks away, you're left worried about how such a huge oversight can go unnoticed by upper management.)");
+                Thread.Sleep(1000);
+                Console.WriteLine("(He also implied that you weren't the first engineer at this dest, even though the plant hasen't been online for a month now.)");
+                Thread.Sleep(1000);
+                Console.WriteLine("(Either way, you reach under the desk and and try his advice.)");
+                Thread.Sleep(1000);
+                Console.ForegroundColor= ConsoleColor.DarkRed;
+                Console.WriteLine("SLAM!");
+                Console.ResetColor();
+                Thread.Sleep(1000);
+                Console.WriteLine("(As you look back up, you're shocked to see the security guard was right as the console boots up into administration mode.)");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine();
+                Console.WriteLine("(Press [ENTER] to continue.)");
+            } 
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("(As he walks away, you're left worried about how such a huge oversight can go unnoticed by upper management.)");
+                Thread.Sleep(1000);
+                Console.WriteLine("(He also implied that you weren't the first engineer at this dest, even though the plant hasen't been online for a month now.)");
+                Thread.Sleep(1000);
+                Console.WriteLine("(Either way, you reach under the desk and and try his advice.)");
+                Thread.Sleep(1000);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("SLAM!");
+                Console.ResetColor();
+                Thread.Sleep(1000);
+                Console.WriteLine("(As you look back up, you're shocked to see the security guard was right as the console boots up like normal.)");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("(Press [ENTER] to continue.");
+            }
         }
         public static void InGuess()
         {
-            Console.WriteLine("(You give up trying to remember your password and guess something random.");
+            Console.WriteLine();
+            Console.WriteLine("my munchables are all i have");
 
         }
-        public static void BootUp()
+        //Normal Console Stuff
+        public static void BootUpConsole()
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Beep();
-            Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
-            Thread.Sleep(100);
-            Console.WriteLine("    //      /   //|    /   //          //     //|    /   //");
-            Thread.Sleep(100);
-            Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__");
-            Thread.Sleep(100);
-            Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //   ");
-            Thread.Sleep(100);
-            Console.WriteLine(" //      /   //   | /          /    //     //   | /   //");
-            Thread.Sleep(100);
-            Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______");
-            Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
-            Thread.Sleep(100);
-            Program.staggerText("...", 500);
-            Console.WriteLine("");
-            Console.WriteLine("WELCOME TO ANSINE CORP.TM REACTOR CONTROL CONSOLE, VER. 1.8.4");
-            Thread.Sleep(300);
-            Console.WriteLine("");
-            Console.WriteLine("Please Select an Command:");
-            Console.WriteLine("");
-            Thread.Sleep(100);
-            Console.WriteLine("[1] STARTUP SEQUENCE");
-            Console.WriteLine("[2] REACTOR STATUS");
-            Console.WriteLine("[3] LOGS");
-            Console.WriteLine("[4] EMERGENCY PROGRAMS");
-            Console.WriteLine("[5] MANUAL");
-            Console.WriteLine("[6] QUIT");
+            if (Program.isAdmin == true)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Beep();
+                Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
+                Thread.Sleep(100);
+                Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
+                Thread.Sleep(100);
+                Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
+                Thread.Sleep(100);
+                Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
+                Thread.Sleep(100);
+                Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
+                Thread.Sleep(100);
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
+                Thread.Sleep(100);
+                Program.staggerText("...", 500);
+                Console.WriteLine("");
+                Console.WriteLine("WELCOME TO ANSINE CORP.TM REACTOR CONTROL CONSOLE, VER. 1.8.4");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("ADMIN CONSOLE ACCESS GRANTED");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Thread.Sleep(300);
+                Console.WriteLine("");
+                Console.WriteLine("Please Select an Command:");
+                Console.WriteLine("");
+                Thread.Sleep(100);
+                Console.WriteLine("[1] STARTUP SEQUENCE");
+                Console.WriteLine("[2] REACTOR STATUS");
+                Console.WriteLine("[3] NETWORK ACCESS");
+                Console.WriteLine("[4] LOGS");
+                Console.WriteLine("[5] EMERGENCY PROGRAMS");
+                Console.WriteLine("[6] MANUAL");
+                Console.WriteLine("[7] QUIT");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Beep();
+                Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
+                Thread.Sleep(100);
+                Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
+                Thread.Sleep(100);
+                Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
+                Thread.Sleep(100);
+                Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
+                Thread.Sleep(100);
+                Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
+                Thread.Sleep(100);
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
+                Thread.Sleep(100);
+                Program.staggerText("...", 500);
+                Console.WriteLine("");
+                Console.WriteLine("WELCOME TO ANSINE CORP.TM REACTOR CONTROL CONSOLE, VER. 1.8.4");
+                Thread.Sleep(300);
+                Console.WriteLine("");
+                Console.WriteLine("Please Select an Command:");
+                Console.WriteLine("");
+                Thread.Sleep(100);
+                Console.WriteLine("[1] STARTUP SEQUENCE");
+                Console.WriteLine("[2] REACTOR STATUS");
+                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[4] EMERGENCY PROGRAMS");
+                Console.WriteLine("[5] MANUAL");
+                Console.WriteLine("[6] QUIT");
+                Console.WriteLine();
+            }
+            
+        }
+        public static void ConsoleHome()
+        {
+            if (Program.isAdmin == true)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Beep();
+                Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
+                Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
+                Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
+                Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
+                Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
+                Thread.Sleep(10);
+                Console.WriteLine("");
+                Console.WriteLine("WELCOME TO ANSINE CORP.TM REACTOR CONTROL CONSOLE, VER. 1.8.4");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("ADMIN CONSOLE ACCESS GRANTED");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Thread.Sleep(10);
+                Console.WriteLine("");
+                Console.WriteLine("Please Select an Command:");
+                Console.WriteLine("");
+                Thread.Sleep(10);
+                Console.WriteLine("[1] STARTUP SEQUENCE");
+                Console.WriteLine("[2] REACTOR STATUS");
+                Console.WriteLine("[3] NETWORK ACCESS");
+                Console.WriteLine("[4] LOGS");
+                Console.WriteLine("[5] EMERGENCY PROGRAMS");
+                Console.WriteLine("[6] MANUAL");
+                Console.WriteLine("[7] QUIT");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
+                Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
+                Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
+                Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
+                Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
+                Thread.Sleep(10);
+                Console.WriteLine("");
+                Console.WriteLine("WELCOME TO ANSINE CORP.TM REACTOR CONTROL CONSOLE, VER. 1.8.4");
+                Thread.Sleep(10);
+                Console.WriteLine("");
+                Console.WriteLine("Please Select an Command:");
+                Console.WriteLine("");
+                Thread.Sleep(10);
+                Console.WriteLine("[1] STARTUP SEQUENCE");
+                Console.WriteLine("[2] REACTOR STATUS");
+                Console.WriteLine("[3] NETWORK ACCESS");
+                Console.WriteLine("[4] LOGS");
+                Console.WriteLine("[5] EMERGENCY PROGRAMS");
+                Console.WriteLine("[6] MANUAL");
+                Console.WriteLine("[7] QUIT");
+                Console.WriteLine();
+            }
+            
         }
     }
 }

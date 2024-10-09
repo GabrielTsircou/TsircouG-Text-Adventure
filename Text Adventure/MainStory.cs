@@ -4,7 +4,7 @@ namespace Text_Adventure
 {
     public class Program
     {
-        public bool bootUp = false;
+        public static bool isAdmin = false;
         public static void staggerText(string text, int staggerTime = 100)
         {
             for (int i = 0; i < text.Length; i++)
@@ -17,7 +17,7 @@ namespace Text_Adventure
         public static void Main(string[] args)
         {
             Console.SetWindowSize(150, 30);
-            parts.MainMenu();
+            Parts.Start();
             //makes input from the console readable
             string input = Console.ReadLine();
             //spits out the input
@@ -43,7 +43,7 @@ namespace Text_Adventure
                 }
                 else if (input == "CALL")
                 {
-                    parts.Please();
+                    Parts.Please();
                 }
                 else if (input == "ALL CAPS!")
                 {
@@ -97,28 +97,40 @@ namespace Text_Adventure
             }
             else
             {
-                parts.Intro();
+                Parts.Intro();
                 input = Console.ReadLine();
                 if (input == "check")
                 {
-                    parts.InCheck();
+                    Parts.InCheck();
                     input = Console.ReadLine();
                     if (input == "")
                     {
-                        parts.BootUp();
+                        Parts.BootUpConsole();
+                        input = Console.ReadLine();
                     }
                     else
                     {
-                        parts.BootUp();
+                        Parts.BootUpConsole();
+                        input = Console.ReadLine();
                     }
                 }
                 else if (input == "ask")
                 {
-                    parts.InAsk();
+                    Parts.InAsk();
+                    isAdmin = true;
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.BootUpConsole();
+                    }
+                    else
+                    {
+                        Parts.BootUpConsole();
+                    }
                 }
                 else if (input == "guess")
                 {
-                    parts.InGuess();
+                    Parts.InGuess();
                 }
             }
         }
