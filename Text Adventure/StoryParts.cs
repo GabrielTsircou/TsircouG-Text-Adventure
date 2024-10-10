@@ -110,7 +110,6 @@ namespace StoryParts
             Console.WriteLine();
             Console.WriteLine("(Press [ENTER] to continue.)");
             string input = Console.ReadLine();
-            
             Console.ResetColor();
             if (input == "")
             {
@@ -163,6 +162,10 @@ namespace StoryParts
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Program.staggerText("...", 500);
+                Console.Beep();
+                Console.Clear();
+                Program.dataLine();
                 Console.Beep();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Thread.Sleep(100);
@@ -196,10 +199,47 @@ namespace StoryParts
                 Console.WriteLine("[6] MANUAL");
                 Console.WriteLine("[7] QUIT");
                 Console.WriteLine();
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    reactorStartup();
+                }
+                else if (input == "2")
+                {
+
+                }
+                else if (input == "3")
+                {
+
+                }
+                else if (input == "4")
+                {
+
+                }
+                else if (input == "5")
+                {
+
+                }
+                else if (input == "6")
+                {
+
+                }
+                else if (input == "7")
+                {
+
+                }
             }
             else
             {
                 Console.Clear();
+                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Program.staggerText("...", 500);
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Beep();
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Program.dataLine();
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Beep();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
@@ -230,6 +270,35 @@ namespace StoryParts
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
                 Console.WriteLine();
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    reactorStartup();
+                }
+                else if (input == "2")
+                {
+
+                }
+                else if (input == "3")
+                {
+
+                }
+                else if (input == "4")
+                {
+
+                }
+                else if (input == "5")
+                {
+
+                }
+                else if (input == "6")
+                {
+
+                }
+                else if (input == "7")
+                {
+
+                }
             }
             
         }
@@ -238,8 +307,7 @@ namespace StoryParts
             if (Program.isAdmin == true)
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Beep();
+                Program.dataLine();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
@@ -266,11 +334,40 @@ namespace StoryParts
                 Console.WriteLine("[6] MANUAL");
                 Console.WriteLine("[7] QUIT");
                 Console.WriteLine();
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    reactorStartup();
+                }
+                else if (input == "2")
+                {
+
+                }
+                else if (input == "3")
+                {
+
+                }
+                else if (input == "4")
+                {
+
+                }
+                else if (input == "5")
+                {
+
+                }
+                else if (input == "6")
+                {
+
+                }
+                else if (input == "7")
+                {
+
+                }
             }
             else
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Program.dataLine();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
@@ -294,8 +391,82 @@ namespace StoryParts
                 Console.WriteLine("[6] MANUAL");
                 Console.WriteLine("[7] QUIT");
                 Console.WriteLine();
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    reactorStartup();
+                }
+                else if (input == "2")
+                {
+
+                }
+                else if (input == "3")
+                {
+
+                }
+                else if (input == "4")
+                {
+
+                }
+                else if (input == "5")
+                {
+
+                }
+                else if (input == "6")
+                {
+
+                }
+                else if (input == "7")
+                {
+
+                }
             }
             
+        }
+        public static void reactorStartup()
+        {
+            Console.Clear();
+            Program.dataLine();
+            Console.WriteLine();
+            Console.Write("REACTOR STATUS: ");
+            if (Program.reactorStarted == false)
+            {
+                Program.staggerText("...", 500);
+                Console.Clear();
+                Program.dataLine();
+                Console.WriteLine();
+                Console.Write("REACTOR STATUS: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("OFFLINE");
+                Console.WriteLine();
+                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Console.WriteLine("Reactor is Offline. Automatic Restart Ready.");
+                Console.WriteLine("Please Consult Manual for Instructions.");
+                Console.WriteLine();
+                Console.WriteLine("Please select a Command:");
+                Console.WriteLine();
+                Console.WriteLine("[1] STARTUP REACTOR");
+                Console.WriteLine("[2] BACK TO MAIN MENU");
+                Console.WriteLine("[3] QUIT");
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.Write("INITIATING AUTOMATIC REACTOR STARTUP");
+                    Program.staggerText("......", 500);
+                    
+                }
+                else if (input == "2")
+                {
+                    ConsoleHome();
+                }
+                else if (input == "3")
+                {
+
+                }
+            }
         }
     }
 }

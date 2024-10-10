@@ -5,6 +5,11 @@ namespace Text_Adventure
     public class Program
     {
         public static bool isAdmin = false;
+        public static bool reactorStarted = false;
+        public static bool reactorStatus = false;
+        public static float coreTemp = 22;
+        public static string date = "June 28, 1999";
+        public static string time = "09:38";
         public static void staggerText(string text, int staggerTime = 100)
         {
             for (int i = 0; i < text.Length; i++)
@@ -13,6 +18,14 @@ namespace Text_Adventure
                 Thread.Sleep(staggerTime);
             }
             Console.WriteLine();
+        }
+        public static void dataLine()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + time + " REACTOR TEMP: " + coreTemp + "C COPYRIGHT ANSINE CORP.TM 1997");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
         public static void Main(string[] args)
         {
@@ -30,69 +43,45 @@ namespace Text_Adventure
                 staggerText("...", 500);
                 Console.WriteLine("BOOTING UP TEST SIMULATION...");
                 staggerText("...", 500);
-                Console.WriteLine("please work");
-                Console.WriteLine("[RECOLOR] or [CALL] or [WAIT] or [BRANCH]");
+                Console.Clear();
+                Console.ForegroundColor= ConsoleColor.Yellow;
+                Console.WriteLine("[CMD] to load console, [JUMP] to jump to any point");
+                Console.WriteLine("Please Enter Debug Command:");
                 input = Console.ReadLine();
-
-                if (input == "RECOLOR")
+                if (input == "CMD")
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("yooooo shits red now");
-                    Console.ResetColor();
-                    Console.WriteLine("back to normal now");
-                }
-                else if (input == "CALL")
-                {
-                    Parts.Please();
-                }
-                else if (input == "ALL CAPS!")
-                {
-                    Console.WriteLine("its supposed to load the music video for MF DOOM's ''All Caps'' lol");
-                }
-                else if (input == "WAIT")
-                {
-                    Thread.Sleep(5000);
-                    Console.WriteLine("You wasted 5 seconds");
-                    staggerText("...", 1000);
-
-                }
-                else if (input == "BRANCH")
-                {
-                    Console.WriteLine("[3] or [4] or [even more]");
+                    Console.WriteLine("isAdmin?");
                     input = Console.ReadLine();
-                    if (input == "3")
+                    if (input == "true")
                     {
-                        Console.WriteLine("boooo");
-                    }
-                    else if (input == "4")
-                    {
-                        Console.WriteLine("why cant i write functional code");
-                    }
-                    else if (input == "even more")
-                    {
-                        Console.WriteLine("[5] or [6]");
+                        isAdmin = true;
+                        Console.WriteLine("Bootup?");
                         input = Console.ReadLine();
-                        if (input == "5")
+                        if (input == "true")
                         {
-                            Console.WriteLine("please let the nightmare end");
+                            Parts.BootUpConsole();
                         }
-                        else if (input == "6")
+                        else if (input == "false")
                         {
-                            Console.WriteLine("please let me die");
-                        }
-                        else
-                        {
-                            Console.WriteLine("GRAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                            Parts.ConsoleHome();
                         }
                     }
-                    else
+                    else if (input == "false")
                     {
-                        Console.WriteLine("WRONG ANSWER *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *POW!* *reload* *POW!* *POW!* *POW!* *POW!* *POW!* *P");
+                        Console.WriteLine("Bootup?");
+                        input = Console.ReadLine();
+                        if (input == "true")
+                        {
+                            Parts.BootUpConsole();
+                        }
+                        else if (input == "false")
+                        {
+                            Parts.ConsoleHome();
+                        }
                     }
-                }
-                else
-                {
-                    Console.WriteLine("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                    
+                    
+
                 }
             }
             else
