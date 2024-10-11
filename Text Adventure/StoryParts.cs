@@ -5,6 +5,7 @@ namespace StoryParts
 {
     public class Parts
     {
+
         public static void Please()
         {
             Program.staggerText("if you can read this somethings working!");
@@ -127,7 +128,6 @@ namespace StoryParts
                 Console.WriteLine("(As you look back up, you're shocked to see the security guard was right as the console boots up into administration mode.)");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine();
                 Console.WriteLine("(Press [ENTER] to continue.)");
             } 
             else
@@ -456,7 +456,58 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.Write("INITIATING AUTOMATIC REACTOR STARTUP");
                     Program.staggerText("......", 500);
-                    
+                    Console.WriteLine("Engaging Generator Lines");
+                    Program.staggerText("........", 500);
+                    Console.WriteLine("Inserting Thorium Fuel Rods");
+                    Program.coreTemp += 200;
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine("Inserting Thorium Fuel Rods");
+                    Program.staggerText(".....");
+                    Console.WriteLine("Engaging Failsafe Measures");
+                    Program.staggerText("....");
+                    Console.WriteLine("Opening Steam Circulation Valves");
+                    Program.coreTemp += 50;
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine("Opening Steam Circulation Valves");
+                    Program.staggerText(".....");
+                    Console.WriteLine("Inserting Plutonium Neutron Source");
+                    Program.coreTemp += 100;
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine("Opening Steam Circulation Valves.....");
+                    Console.WriteLine("Inserting Plutonium Neutron Source");
+                    Program.staggerText("...");
+                    Console.WriteLine("Disengaging Fission Reaction Limiters");
+                    Program.coreTemp += 150;
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine("Opening Steam Circulation Valves.....");
+                    Console.WriteLine("Inserting Plutonium Neutron Source...");
+                    Console.WriteLine("Disengaging Fission Reaction Limiters");
+                    Program.staggerText("..");
+                    Console.WriteLine("Reading Reaction Sensors");
+                    Thread.Sleep(230);
+                    //standard temp 520C
                 }
                 else if (input == "2")
                 {

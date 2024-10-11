@@ -10,7 +10,7 @@ namespace Text_Adventure
         public static float coreTemp = 22;
         public static string date = "June 28, 1999";
         public static string time = "09:38";
-        public static void staggerText(string text, int staggerTime = 100)
+        public static void staggerText(string text, int staggerTime = 500)
         {
             for (int i = 0; i < text.Length; i++)
             {
