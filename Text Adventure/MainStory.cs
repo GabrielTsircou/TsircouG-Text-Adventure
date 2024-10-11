@@ -2,7 +2,7 @@
 
 namespace Text_Adventure
 {
-    public class Program
+    public class Programfsdafgds
     {
         public static bool isAdmin = false;
         public static bool reactorStarted = false;
