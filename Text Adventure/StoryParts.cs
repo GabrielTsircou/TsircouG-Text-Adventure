@@ -1,11 +1,9 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Text_Adventure;
+﻿using Text_Adventure;
 
 namespace StoryParts
 {
     public class Parts
     {
-
         public static void Please()
         {
             Program.staggerText("if you can read this somethings working!");
@@ -114,7 +112,6 @@ namespace StoryParts
             Console.ResetColor();
             if (input == "")
             {
-                Console.WriteLine();
                 Console.WriteLine("(As he walks away, you're left worried about how such a huge oversight can go unnoticed by upper management.)");
                 Thread.Sleep(1000);
                 Console.WriteLine("(He also implied that you weren't the first engineer at this dest, even though the plant hasen't been online for a month now.)");
@@ -153,7 +150,6 @@ namespace StoryParts
         {
             Console.WriteLine();
             Console.WriteLine("my munchables are all i have");
-
         }
         //Normal Console Stuff
         public static void BootUpConsole()
@@ -177,7 +173,7 @@ namespace StoryParts
                 Thread.Sleep(100);
                 Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
                 Thread.Sleep(100);
-                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______ TM");
                 Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
                 Thread.Sleep(100);
                 Program.staggerText("...", 500);
@@ -252,7 +248,7 @@ namespace StoryParts
                 Thread.Sleep(100);
                 Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
                 Thread.Sleep(100);
-                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______ TM");
                 Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
                 Thread.Sleep(100);
                 Program.staggerText("...", 500);
@@ -313,7 +309,7 @@ namespace StoryParts
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
                 Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
                 Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
-                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______ TM");
                 Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
                 Thread.Sleep(10);
                 Console.WriteLine("");
@@ -373,7 +369,7 @@ namespace StoryParts
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
                 Console.WriteLine("  //      /   //  |  /          /    //     //  |  /   //         ");
                 Console.WriteLine(" //      /   //   | /          /    //     //   | /   //          ");
-                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______     ");
+                Console.WriteLine("//      /  _//_  _|/_   ______/  __//__  _//_  _|/_  //______ TM");
                 Console.WriteLine("ANSINE CORP.TM COPYRIGHT 1997");
                 Thread.Sleep(10);
                 Console.WriteLine("");
@@ -439,15 +435,15 @@ namespace StoryParts
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("OFFLINE");
                 Console.WriteLine();
-                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Reactor is Offline. Automatic Restart Ready.");
                 Console.WriteLine("Please Consult Manual for Instructions.");
                 Console.WriteLine();
                 Console.WriteLine("Please select a Command:");
                 Console.WriteLine();
                 Console.WriteLine("[1] STARTUP REACTOR");
-                Console.WriteLine("[2] BACK TO MAIN MENU");
-                Console.WriteLine("[3] QUIT");
+                Console.WriteLine("[2] QUIT");
+                Console.WriteLine();
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
@@ -456,66 +452,152 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.Write("INITIATING AUTOMATIC REACTOR STARTUP");
                     Program.staggerText("......", 500);
-                    Console.WriteLine("Engaging Generator Lines");
+                    Console.WriteLine();
+                    Console.Write("Engaging Generator Lines");
                     Program.staggerText("........", 500);
-                    Console.WriteLine("Inserting Thorium Fuel Rods");
+                    Console.WriteLine();
+                    Console.Write("Inserting Thorium Fuel Rods");
                     Program.coreTemp += 200;
+                    Program.minute += 2;
                     Console.Clear();
                     Program.dataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
-                    Console.WriteLine("Inserting Thorium Fuel Rods");
+                    Console.WriteLine();
+                    Console.Write("Inserting Thorium Fuel Rods");
                     Program.staggerText(".....");
-                    Console.WriteLine("Engaging Failsafe Measures");
+                    Console.WriteLine();
+                    Console.Write("Engaging Failsafe Measures");
                     Program.staggerText("....");
                     Console.WriteLine("Opening Steam Circulation Valves");
                     Program.coreTemp += 50;
+                    Program.minute += 2;
                     Console.Clear();
                     Program.dataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine();
                     Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
-                    Console.WriteLine("Opening Steam Circulation Valves");
+                    Console.WriteLine();
+                    Console.Write("Opening Steam Circulation Valves");
                     Program.staggerText(".....");
                     Console.WriteLine("Inserting Plutonium Neutron Source");
                     Program.coreTemp += 100;
+                    Program.minute += 6;
                     Console.Clear();
                     Program.dataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine();
                     Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine();
                     Console.WriteLine("Opening Steam Circulation Valves.....");
-                    Console.WriteLine("Inserting Plutonium Neutron Source");
+                    Console.WriteLine();
+                    Console.Write("Inserting Plutonium Neutron Source");
                     Program.staggerText("...");
                     Console.WriteLine("Disengaging Fission Reaction Limiters");
                     Program.coreTemp += 150;
+                    Program.minute += 3;
                     Console.Clear();
                     Program.dataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine();
                     Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine();
                     Console.WriteLine("Opening Steam Circulation Valves.....");
+                    Console.WriteLine();
                     Console.WriteLine("Inserting Plutonium Neutron Source...");
-                    Console.WriteLine("Disengaging Fission Reaction Limiters");
+                    Console.WriteLine();
+                    Console.Write("Disengaging Fission Reaction Limiters");
                     Program.staggerText("..");
+                    Console.WriteLine();
                     Console.WriteLine("Reading Reaction Sensors");
                     Thread.Sleep(230);
+                    Program.reactorStarted = true;
+                    Program.minute += 7;
+                    Console.Clear();
+                    Program.dataLine();
+                    Console.WriteLine();
+                    Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
+                    Console.WriteLine();
+                    Console.WriteLine("Engaging Generator Lines........");
+                    Console.WriteLine();
+                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine();
+                    Console.WriteLine("Engaging Failsafe Measures....");
+                    Console.WriteLine();
+                    Console.WriteLine("Opening Steam Circulation Valves.....");
+                    Console.WriteLine();
+                    Console.WriteLine("Inserting Plutonium Neutron Source...");
+                    Console.WriteLine();
+                    Console.WriteLine("Disengaging Fission Reaction Limiters..");
+                    Console.WriteLine();
+                    Console.WriteLine("Reading Reaction Sensors");
+                    Console.WriteLine();
+                    Console.WriteLine("REACTOR ONLINE AND OPERATIONAL");
+                    Console.WriteLine("ALL SYSTEMS NOMINAL");
+                    Console.WriteLine();
+                    Console.WriteLine("Press [ENTER] to Exit.");
+                    Console.WriteLine();
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        reactorStartup();
+                    }
+                    else
+                    {
+                        reactorStartup();
+                    }
                     //standard temp 520C
                 }
                 else if (input == "2")
                 {
                     ConsoleHome();
                 }
-                else if (input == "3")
+            }
+            if (Program.reactorStarted == true)
+            {
+                Program.staggerText("...", 500);
+                Console.Clear();
+                Program.dataLine();
+                Console.WriteLine();
+                Console.Write("REACTOR STATUS: ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("ONLINE");
+                Console.WriteLine();
+                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Console.WriteLine("Reactor is Online. All Systems Nominal.");
+                Console.WriteLine("Check REACTOR STATUS for Detailed Status.");
+                Console.WriteLine("Please Consult Manual for More Information.");
+                Console.WriteLine();
+                Console.WriteLine("Please Select a Command");
+                Console.WriteLine();
+                Console.WriteLine("[1] SHUTDOWN REACTOR");
+                Console.WriteLine("[2] QUIT");
+                Console.WriteLine();
+                string input = Console.ReadLine();
+                if (input == "1")
                 {
-
+                    Console.WriteLine("uhhhhh you werent supposed to do that");
+                }
+                else if (input == "2")
+                {
+                    ConsoleHome();
                 }
             }
         }

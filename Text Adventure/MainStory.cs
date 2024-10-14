@@ -8,8 +8,9 @@ namespace Text_Adventure
         public static bool reactorStarted = false;
         public static bool reactorStatus = false;
         public static float coreTemp = 22;
-        public static string date = "June 28, 1999";
-        public static string time = "09:38";
+        public static string date = "28 June, 1999";
+        public static int hour = 09;
+        public static int minute = 38;
         public static void staggerText(string text, int staggerTime = 500)
         {
             for (int i = 0; i < text.Length; i++)
@@ -23,7 +24,7 @@ namespace Text_Adventure
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + time + " REACTOR TEMP: " + coreTemp + "C COPYRIGHT ANSINE CORP.TM 1997");
+            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + hour.ToString() + ":" + minute.ToString() + " REACTOR TEMP: " + coreTemp + "(C) COPYRIGHT ANSINE CORP.TM 1997");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
