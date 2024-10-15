@@ -20,6 +20,7 @@ namespace Text_Adventure
             }
             Console.WriteLine();
         }
+       
         public static void Menu()
         {
             string input = Console.ReadLine();
@@ -47,12 +48,27 @@ namespace Text_Adventure
             {
 
             }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Please Enter a Valid Command.");
+                Console.WriteLine("(Press [ENTER] to Continue.)");
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    Parts.ConsoleHome();
+                }
+                else
+                {
+                    Parts.ConsoleHome();
+                }
+            }
         }
         public static void DataLine()
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + hour.ToString() + ":" + minute.ToString() + " REACTOR TEMP: " + coreTemp + "(C) COPYRIGHT ANSINE CORP.TM 1997");
+            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + hour.ToString() + ":" + minute.ToString() + " REACTOR TEMP: " + coreTemp + "C COPYRIGHT ANSINE CORP.TM 1997");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
@@ -117,39 +133,8 @@ namespace Text_Adventure
             else
             {
                 Parts.Intro();
-                input = Console.ReadLine();
-                if (input == "check")
-                {
-                    Parts.InCheck();
-                    input = Console.ReadLine();
-                    if (input == "")
-                    {
-                        Parts.BootUpConsole();
-                    }
-                    else
-                    {
-                        Parts.BootUpConsole();
-                    }
-                }
-                else if (input == "ask")
-                {
-                    Parts.InAsk();
-                    isAdmin = true;
-                    input = Console.ReadLine();
-                    if (input == "")
-                    {
-                        Parts.BootUpConsole();
-                    }
-                    else
-                    {
-                        Parts.BootUpConsole();
-                    }
-                }
-                else if (input == "guess")
-                {
-                    Parts.InGuess();
+                
                 }
             }
         }
     }
-}

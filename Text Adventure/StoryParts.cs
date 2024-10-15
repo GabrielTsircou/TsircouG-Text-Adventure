@@ -24,7 +24,7 @@ namespace StoryParts
             Console.ResetColor();
             Thread.Sleep(100);
             Console.WriteLine("");
-            Console.WriteLine("By GABRIEL TSIRCOU");
+            Console.WriteLine("By TYLER, THE DESTROYER");
             Console.WriteLine("");
             Thread.Sleep(300);
             Console.WriteLine("Narration are in (Parentheses), speech are in plaintext, with you in white and in different colors for different people...");
@@ -63,6 +63,56 @@ namespace StoryParts
             Console.WriteLine();
             Console.WriteLine("([CHECK] your pockets for notes, [ASK] someone for help, or [GUESS] and hope you get lucky.)");
             Console.ResetColor();
+            Console.WriteLine();
+            string input = Console.ReadLine();
+            if (input == "check")
+            {
+                InCheck();
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    BootUpConsole();
+                }
+                else
+                {
+                    BootUpConsole();
+                }
+            }
+            else if (input == "ask")
+            {
+                InAsk();
+                Program.isAdmin = true;
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    BootUpConsole();
+                }
+                else
+                {
+                    BootUpConsole();
+                }
+            }
+            else if (input == "guess")
+            {
+                InGuess();
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("[ERROR: INVALID INPUT]");
+                Console.WriteLine("[PRESS [ENTER] TO RETRY]");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    Intro();
+                }
+                else
+                {
+                    Intro();
+                }
+            }
         }
         public static void InCheck()
         {
@@ -105,7 +155,7 @@ namespace StoryParts
             Thread.Sleep(1000);
             Console.WriteLine("Now don't bother me again, I already have a bunch of stuff to do, and it's only the beginning of the day.");
             Thread.Sleep(1000);
-            Console.ForegroundColor= ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
             Console.WriteLine("(Press [ENTER] to continue.)");
             string input = Console.ReadLine();
@@ -118,7 +168,7 @@ namespace StoryParts
                 Thread.Sleep(1000);
                 Console.WriteLine("(Either way, you reach under the desk and and try his advice.)");
                 Thread.Sleep(1000);
-                Console.ForegroundColor= ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("SLAM!");
                 Console.ResetColor();
                 Thread.Sleep(1000);
@@ -126,7 +176,7 @@ namespace StoryParts
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("(Press [ENTER] to continue.)");
-            } 
+            }
             else
             {
                 Console.WriteLine();
@@ -200,7 +250,7 @@ namespace StoryParts
             else
             {
                 Console.Clear();
-                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Program.staggerText("...", 500);
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Beep();
@@ -241,7 +291,7 @@ namespace StoryParts
                 Program.Menu();
 
             }
-            
+
         }
         public static void ConsoleHome()
         {
@@ -304,7 +354,7 @@ namespace StoryParts
                 Console.WriteLine();
                 Program.Menu();
             }
-            
+
         }
         public static void ReactorStartup()
         {
@@ -343,7 +393,7 @@ namespace StoryParts
                     Console.Write("Engaging Generator Lines");
                     Program.staggerText("........", 500);
                     Console.WriteLine();
-                    Console.Write("Inserting Thorium Fuel Rods");
+                    Console.Write("Inserting Uranium Fuel Rods");
                     Program.coreTemp += 200;
                     Program.minute += 2;
                     Console.Clear();
@@ -353,7 +403,7 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
                     Console.WriteLine();
-                    Console.Write("Inserting Thorium Fuel Rods");
+                    Console.Write("Inserting Uranium Fuel Rods");
                     Program.staggerText(".....");
                     Console.WriteLine();
                     Console.Write("Engaging Failsafe Measures");
@@ -368,7 +418,7 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
                     Console.WriteLine();
-                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Inserting Uranium Fuel Rods.....");
                     Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
                     Console.WriteLine();
@@ -384,7 +434,7 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
                     Console.WriteLine();
-                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Inserting Uranium Fuel Rods.....");
                     Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
                     Console.WriteLine();
@@ -402,7 +452,7 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
                     Console.WriteLine();
-                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Inserting Uranium Fuel Rods.....");
                     Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
                     Console.WriteLine();
@@ -424,7 +474,7 @@ namespace StoryParts
                     Console.WriteLine();
                     Console.WriteLine("Engaging Generator Lines........");
                     Console.WriteLine();
-                    Console.WriteLine("Inserting Thorium Fuel Rods.....");
+                    Console.WriteLine("Inserting Uranium Fuel Rods.....");
                     Console.WriteLine();
                     Console.WriteLine("Engaging Failsafe Measures....");
                     Console.WriteLine();
@@ -455,7 +505,21 @@ namespace StoryParts
                 else if (input == "2")
                 {
                     ConsoleHome();
-                    
+
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.ReactorStartup();
+                    }
+                    else
+                    {
+                        Parts.ReactorStartup();
+                    }
                 }
             }
             if (Program.reactorStarted == true)
@@ -468,7 +532,7 @@ namespace StoryParts
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("ONLINE");
                 Console.WriteLine();
-                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Reactor is Online. All Systems Nominal.");
                 Console.WriteLine("Check REACTOR STATUS for Detailed Status.");
                 Console.WriteLine("Please Consult Manual for More Information.");
@@ -486,6 +550,20 @@ namespace StoryParts
                 else if (input == "2")
                 {
                     ConsoleHome();
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.ReactorStartup();
+                    }
+                    else
+                    {
+                        Parts.ReactorStartup();
+                    }
                 }
             }
         }
@@ -519,28 +597,185 @@ namespace StoryParts
             string input = Console.ReadLine();
             if (input == "1")
             {
-                Console.Clear();
-                Program.DataLine();
-                Console.WriteLine();
-
+                ManualOne();
+                input = Console.ReadLine();
+                if (input == "1")
+                {
+                    ManualTwo();
+                }
+                else if (input == "2")
+                {
+                    ReactorManual();
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.ManualOne();
+                    }
+                    else
+                    {
+                        Parts.ManualOne();
+                    }
+                }
             }
             else if (input == "2")
             {
-
+                ManualTwo();
+                input = Console.ReadLine();
+                if (input == "1")
+                {
+                    ManualThree();
+                }
+                else if (input == "2")
+                {
+                    ReactorManual();
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.ManualTwo();
+                    }
+                    else
+                    {
+                        Parts.ManualTwo();
+                    }
+                }
             }
             else if (input == "3")
             {
+                ManualThree();
+                input = Console.ReadLine();
+                if (input == "1")
+                {
+                    ManualFour();
+                }
+                else if (input == "2")
+                {
+                    ReactorManual();
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        Parts.ManualThree();
+                    }
+                    else
+                    {
+                        Parts.ManualThree();
+                    }
+                }
 
             }
             else if (input == "4")
             {
-
+                ManualFour();
+                input = Console.ReadLine();
+                if (input == "1")
+                {
+                    ReactorManual();
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Command.");
+                    Console.WriteLine("(Press [ENTER] to Continue.)");
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        ManualFour();
+                    }
+                    else
+                    {
+                        ManualFour();
+                    }
+                }
             }
             else if (input == "5")
             {
                 ConsoleHome();
                 Program.Menu();
             }
+            else
+            {
+                Console.WriteLine("Please Enter a Valid Command.");
+                Console.WriteLine("(Press [ENTER] to Continue.)");
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    Parts.ReactorManual();
+                }
+                else
+                {
+                    Parts.ReactorManual();
+                }
+            }
+        }
+        //stuff for the manual
+        public static void ManualOne()
+        {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.WriteLine("CHAPTER 1: STARTUP AND SHUTDOWN");
+            Console.WriteLine();
+            Console.WriteLine("ANSINE.TM's CERAPHIME.TM Class Uranium Fission Reactor is outfitted with an Automated Startup and Shutdown (A.S.S.) system.");
+            Console.WriteLine("To start up or stop energy production, all an engineer needs to do is to go into the command window and enter the start command, and ");
+            Console.WriteLine("the A.S.S system will automatically go through the neccessary procedures necessary.");
+            Console.WriteLine();
+            Console.WriteLine("Please Select a Command:");
+            Console.WriteLine();
+            Console.WriteLine("[1] NEXT CHAPTER");
+            Console.WriteLine("[2] BACK");
+            Console.WriteLine();
+        }
+        public static void ManualTwo()
+        {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.WriteLine("CHAPTER 2: EMERGENCY PROCEDURES" +
+                "");
+            Console.WriteLine();
+            Console.WriteLine("Please Select a Command:");
+            Console.WriteLine();
+            Console.WriteLine("[1] NEXT CHAPTER");
+            Console.WriteLine("[2] BACK");
+            Console.WriteLine();
+        }
+        public static void ManualThree()
+        {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.WriteLine("");
+            Console.WriteLine();
+            Console.WriteLine("Please Select a Command:");
+            Console.WriteLine();
+            Console.WriteLine("[1] NEXT CHAPTER");
+            Console.WriteLine("[2] BACK");
+            Console.WriteLine();
+        }
+        public static void ManualFour()
+        {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.WriteLine("");
+            Console.WriteLine();
+            Console.WriteLine("Please Select a Command:");
+            Console.WriteLine();
+            Console.WriteLine("Press [ENTER] to Exit.");
+            Console.WriteLine();
         }
     }
 }
