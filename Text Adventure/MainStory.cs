@@ -20,7 +20,35 @@ namespace Text_Adventure
             }
             Console.WriteLine();
         }
-        public static void dataLine()
+        public static void Menu()
+        {
+            string input = Console.ReadLine();
+            if (input == "1")
+            {
+                Parts.ReactorStartup();
+            }
+            else if (input == "2")
+            {
+
+            }
+            else if (input == "3")
+            {
+
+            }
+            else if (input == "4")
+            {
+
+            }
+            else if (input == "5")
+            {
+                Parts.ReactorManual();
+            }
+            else if (input == "6")
+            {
+
+            }
+        }
+        public static void DataLine()
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -65,6 +93,7 @@ namespace Text_Adventure
                         else if (input == "false")
                         {
                             Parts.ConsoleHome();
+                         
                         }
                     }
                     else if (input == "false")
@@ -96,12 +125,10 @@ namespace Text_Adventure
                     if (input == "")
                     {
                         Parts.BootUpConsole();
-                        input = Console.ReadLine();
                     }
                     else
                     {
                         Parts.BootUpConsole();
-                        input = Console.ReadLine();
                     }
                 }
                 else if (input == "ask")

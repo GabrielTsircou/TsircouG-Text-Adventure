@@ -161,7 +161,7 @@ namespace StoryParts
                 Program.staggerText("...", 500);
                 Console.Beep();
                 Console.Clear();
-                Program.dataLine();
+                Program.DataLine();
                 Console.Beep();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Thread.Sleep(100);
@@ -189,41 +189,13 @@ namespace StoryParts
                 Thread.Sleep(100);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
                 Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] NETWORK ACCESS");
-                Console.WriteLine("[4] LOGS");
-                Console.WriteLine("[5] EMERGENCY PROGRAMS");
-                Console.WriteLine("[6] MANUAL");
-                Console.WriteLine("[7] QUIT");
+                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[4] EMERGENCY PROGRAMS");
+                Console.WriteLine("[5] MANUAL");
+                Console.WriteLine("[6] QUIT");
                 Console.WriteLine();
-                string input = Console.ReadLine();
-                if (input == "1")
-                {
-                    reactorStartup();
-                }
-                else if (input == "2")
-                {
+                Program.Menu();
 
-                }
-                else if (input == "3")
-                {
-
-                }
-                else if (input == "4")
-                {
-
-                }
-                else if (input == "5")
-                {
-
-                }
-                else if (input == "6")
-                {
-
-                }
-                else if (input == "7")
-                {
-
-                }
             }
             else
             {
@@ -234,7 +206,7 @@ namespace StoryParts
                 Console.Beep();
                 Console.Clear();
                 Console.BackgroundColor = ConsoleColor.DarkGray;
-                Program.dataLine();
+                Program.DataLine();
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Beep();
@@ -266,35 +238,8 @@ namespace StoryParts
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
                 Console.WriteLine();
-                string input = Console.ReadLine();
-                if (input == "1")
-                {
-                    reactorStartup();
-                }
-                else if (input == "2")
-                {
+                Program.Menu();
 
-                }
-                else if (input == "3")
-                {
-
-                }
-                else if (input == "4")
-                {
-
-                }
-                else if (input == "5")
-                {
-
-                }
-                else if (input == "6")
-                {
-
-                }
-                else if (input == "7")
-                {
-
-                }
             }
             
         }
@@ -303,7 +248,7 @@ namespace StoryParts
             if (Program.isAdmin == true)
             {
                 Console.Clear();
-                Program.dataLine();
+                Program.DataLine();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
@@ -324,46 +269,17 @@ namespace StoryParts
                 Thread.Sleep(10);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
                 Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] NETWORK ACCESS");
-                Console.WriteLine("[4] LOGS");
-                Console.WriteLine("[5] EMERGENCY PROGRAMS");
-                Console.WriteLine("[6] MANUAL");
-                Console.WriteLine("[7] QUIT");
+                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[4] EMERGENCY PROGRAMS");
+                Console.WriteLine("[5] MANUAL");
+                Console.WriteLine("[6] QUIT");
                 Console.WriteLine();
-                string input = Console.ReadLine();
-                if (input == "1")
-                {
-                    reactorStartup();
-                }
-                else if (input == "2")
-                {
-
-                }
-                else if (input == "3")
-                {
-
-                }
-                else if (input == "4")
-                {
-
-                }
-                else if (input == "5")
-                {
-
-                }
-                else if (input == "6")
-                {
-
-                }
-                else if (input == "7")
-                {
-
-                }
+                Program.Menu();
             }
             else
             {
                 Console.Clear();
-                Program.dataLine();
+                Program.DataLine();
                 Console.WriteLine("     ________   ___    __   _______   _____   ___    __   ________");
                 Console.WriteLine("    //      /   //|    /   //          //     //|    /   //       ");
                 Console.WriteLine("   //======/   // |   /   //_____     //     // |   /   //__      ");
@@ -381,55 +297,26 @@ namespace StoryParts
                 Thread.Sleep(10);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
                 Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] NETWORK ACCESS");
-                Console.WriteLine("[4] LOGS");
-                Console.WriteLine("[5] EMERGENCY PROGRAMS");
-                Console.WriteLine("[6] MANUAL");
-                Console.WriteLine("[7] QUIT");
+                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[4] EMERGENCY PROGRAMS");
+                Console.WriteLine("[5] MANUAL");
+                Console.WriteLine("[6] QUIT");
                 Console.WriteLine();
-                string input = Console.ReadLine();
-                if (input == "1")
-                {
-                    reactorStartup();
-                }
-                else if (input == "2")
-                {
-
-                }
-                else if (input == "3")
-                {
-
-                }
-                else if (input == "4")
-                {
-
-                }
-                else if (input == "5")
-                {
-
-                }
-                else if (input == "6")
-                {
-
-                }
-                else if (input == "7")
-                {
-
-                }
+                Program.Menu();
             }
             
         }
-        public static void reactorStartup()
+        public static void ReactorStartup()
         {
             Console.Clear();
-            Program.dataLine();
+            Program.DataLine();
             Console.WriteLine();
             Console.Write("REACTOR STATUS: ");
             if (Program.reactorStarted == false)
             {
                 Program.staggerText("...", 500);
                 Console.Clear();
-                Program.dataLine();
+                Program.DataLine();
                 Console.WriteLine();
                 Console.Write("REACTOR STATUS: ");
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -442,13 +329,13 @@ namespace StoryParts
                 Console.WriteLine("Please select a Command:");
                 Console.WriteLine();
                 Console.WriteLine("[1] STARTUP REACTOR");
-                Console.WriteLine("[2] QUIT");
+                Console.WriteLine("[2] BACK");
                 Console.WriteLine();
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.Write("INITIATING AUTOMATIC REACTOR STARTUP");
                     Program.staggerText("......", 500);
@@ -460,7 +347,7 @@ namespace StoryParts
                     Program.coreTemp += 200;
                     Program.minute += 2;
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
                     Console.WriteLine();
@@ -475,7 +362,7 @@ namespace StoryParts
                     Program.coreTemp += 50;
                     Program.minute += 2;
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
                     Console.WriteLine();
@@ -491,7 +378,7 @@ namespace StoryParts
                     Program.coreTemp += 100;
                     Program.minute += 6;
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
                     Console.WriteLine();
@@ -509,7 +396,7 @@ namespace StoryParts
                     Program.coreTemp += 150;
                     Program.minute += 3;
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
                     Console.WriteLine();
@@ -531,7 +418,7 @@ namespace StoryParts
                     Program.reactorStarted = true;
                     Program.minute += 7;
                     Console.Clear();
-                    Program.dataLine();
+                    Program.DataLine();
                     Console.WriteLine();
                     Console.WriteLine("INITIATING AUTOMATIC REACTOR STARTUP......");
                     Console.WriteLine();
@@ -557,24 +444,25 @@ namespace StoryParts
                     input = Console.ReadLine();
                     if (input == "")
                     {
-                        reactorStartup();
+                        ReactorStartup();
                     }
                     else
                     {
-                        reactorStartup();
+                        ReactorStartup();
                     }
                     //standard temp 520C
                 }
                 else if (input == "2")
                 {
                     ConsoleHome();
+                    
                 }
             }
             if (Program.reactorStarted == true)
             {
                 Program.staggerText("...", 500);
                 Console.Clear();
-                Program.dataLine();
+                Program.DataLine();
                 Console.WriteLine();
                 Console.Write("REACTOR STATUS: ");
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -599,6 +487,59 @@ namespace StoryParts
                 {
                     ConsoleHome();
                 }
+            }
+        }
+        public static void ReactorStatus()
+        {
+
+        }
+        public static void ReactorLogs()
+        {
+
+        }
+        public static void EmergencyPrograms()
+        {
+
+        }
+        public static void ReactorManual()
+        {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.WriteLine("WELCOME TO THE ANSINE.TM ENGINEERS OPERATOR MANUAL");
+            Console.WriteLine();
+            Console.WriteLine("Please select a passage:");
+            Console.WriteLine();
+            Console.WriteLine("[1] STARTUP AND SHUTDOWN");
+            Console.WriteLine("[2] EMERGENCY PROCEDURES");
+            Console.WriteLine("[3] STATUS SCREEN");
+            Console.WriteLine("[4] STANDARD OPERATION");
+            Console.WriteLine("[5] BACK");
+            Console.WriteLine();
+            string input = Console.ReadLine();
+            if (input == "1")
+            {
+                Console.Clear();
+                Program.DataLine();
+                Console.WriteLine();
+
+            }
+            else if (input == "2")
+            {
+
+            }
+            else if (input == "3")
+            {
+
+            }
+            else if (input == "4")
+            {
+
+            }
+            else if (input == "5")
+            {
+                ConsoleHome();
+                Program.Menu();
             }
         }
     }
