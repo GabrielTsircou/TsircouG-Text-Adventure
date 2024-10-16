@@ -1,16 +1,28 @@
 ﻿using StoryParts;
+using System.Drawing;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Text_Adventure
 {
     public class Program
     {
+        enum tempStatus
+        {
+            Black,
+            Blue,
+            DarkGreen,
+            Yellow,
+            Red
+        }
         public static bool isAdmin = false;
-        public static bool reactorStarted = false;
+        public static int reactorStarted = 0;
         public static bool reactorStatus = false;
-        public static float coreTemp = 22;
+        public static double coreTemp = 22;
         public static string date = "28 June, 1999";
         public static int hour = 09;
         public static int minute = 38;
+        private static int tempNum;
+
         public static void staggerText(string text, int staggerTime = 500)
         {
             for (int i = 0; i < text.Length; i++)
@@ -20,7 +32,7 @@ namespace Text_Adventure
             }
             Console.WriteLine();
         }
-       
+
         public static void Menu()
         {
             string input = Console.ReadLine();
@@ -68,13 +80,39 @@ namespace Text_Adventure
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("DATE: " + date + " CURRENT TIME: " + hour.ToString() + ":" + minute.ToString() + " REACTOR TEMP: " + coreTemp + "C COPYRIGHT ANSINE CORP.TM 1997");
+            Console.Write("DATE: " + date);
+            Console.Write(" TIME: " + hour.ToString() + ":" + minute.ToString());
+            Console.Write(" CORE TEMP: ");
+            if (coreTemp >= 100)
+            {
+                Console.ForegroundColor = (ConsoleColor)tempStatus.Blue;
+            }
+            if (coreTemp >= 500)
+            {
+                Console.ForegroundColor = (ConsoleColor)tempStatus.DarkGreen;
+            }
+            if (coreTemp >= 600)
+            {
+                Console.ForegroundColor = (ConsoleColor)tempStatus.Yellow;
+            }
+            if (coreTemp > 700)
+            {
+                Console.ForegroundColor = (ConsoleColor)tempStatus.Red;
+            }
+            Console.Write((int)coreTemp + "C");
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write(" COPYRIGHT ANSINE CORP.TM 1997");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
         public static void Main(string[] args)
         {
-            Console.SetWindowSize(150, 30);
+            while (reactorStarted == 1)
+            {
+                coreTemp++;
+            }
+            Console.SetWindowSize(160, 30);
             Parts.Start();
             //makes input from the console readable
             string input = Console.ReadLine();
@@ -125,9 +163,6 @@ namespace Text_Adventure
                             Parts.ConsoleHome();
                         }
                     }
-                    
-                    
-
                 }
             }
             else
