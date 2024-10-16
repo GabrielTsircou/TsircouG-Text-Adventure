@@ -1,7 +1,5 @@
 ﻿using StoryParts;
-using System.Drawing;
-using System.Runtime.Intrinsics.Arm;
-
+//my munchables are all i have
 namespace Text_Adventure
 {
     public class Program
@@ -18,10 +16,20 @@ namespace Text_Adventure
         public static int reactorStarted = 0;
         public static bool reactorStatus = false;
         public static double coreTemp = 22;
+        public static double coreRise = 0.5;
         public static string date = "28 June, 1999";
         public static int hour = 09;
         public static int minute = 38;
         private static int tempNum;
+
+        public static Thread thread = new(() =>
+        {
+            while (true)
+            {
+                coreTemp += coreRise;
+                Thread.Sleep(100);
+            }
+        });
 
         public static void staggerText(string text, int staggerTime = 500)
         {
@@ -42,15 +50,15 @@ namespace Text_Adventure
             }
             else if (input == "2")
             {
-
+                Parts.ReactorStatus();
             }
             else if (input == "3")
             {
-
+                Parts.ReactorLogs();
             }
             else if (input == "4")
             {
-
+                Parts.EmergencyPrograms();
             }
             else if (input == "5")
             {
@@ -108,11 +116,8 @@ namespace Text_Adventure
         }
         public static void Main(string[] args)
         {
-            while (reactorStarted == 1)
-            {
-                coreTemp++;
-            }
-            Console.SetWindowSize(160, 30);
+
+            Console.SetWindowSize(175, 30);
             Parts.Start();
             //makes input from the console readable
             string input = Console.ReadLine();

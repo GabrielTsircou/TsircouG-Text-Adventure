@@ -31,6 +31,7 @@ namespace StoryParts
             Console.WriteLine("This is because it's in early access and we need time to create something we love or some other bullcrap made up by AAA execs to make money off an incomplete game");
             Console.WriteLine("and totally not me procrastinating this entire project ehehe");
             Console.WriteLine("I'll tell you the parts that aren't complete so you can avoid them. Choices are in brackets btw, and make sure they're in all lowercase.");
+            Console.WriteLine("also i forgot to add an actual way to die so just do the anti resonance option in emergency commands to see something actually happen");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Press [ENTER] to begin.");
@@ -59,7 +60,7 @@ namespace StoryParts
             Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
-            Console.WriteLine("([CHECK] your pockets for notes, [ASK] someone for help, or [GUESS] and hope you get lucky.)");
+            Console.WriteLine("([CHECK] your pockets for notes, [ASK] someone for help, or [GUESS (oops! theres isnt anything here)] and hope you get lucky.)");
             Console.ResetColor();
             Console.WriteLine();
             string input = Console.ReadLine();
@@ -237,8 +238,8 @@ namespace StoryParts
                 Console.WriteLine("");
                 Thread.Sleep(100);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
-                Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[2] REACTOR STATUS (not available)");
+                Console.WriteLine("[3] LOGS (not avalable either dang)");
                 Console.WriteLine("[4] EMERGENCY PROGRAMS");
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
@@ -279,8 +280,8 @@ namespace StoryParts
                 Console.WriteLine("");
                 Thread.Sleep(100);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
-                Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[2] REACTOR STATUS (not available)");
+                Console.WriteLine("[3] LOGS (not available either dang)");
                 Console.WriteLine("[4] EMERGENCY PROGRAMS");
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
@@ -316,8 +317,8 @@ namespace StoryParts
                 Console.WriteLine("");
                 Thread.Sleep(10);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
-                Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[2] REACTOR STATUS (not available)");
+                Console.WriteLine("[3] LOGS (not available either oops)");
                 Console.WriteLine("[4] EMERGENCY PROGRAMS");
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
@@ -345,8 +346,8 @@ namespace StoryParts
                 Console.WriteLine("");
                 Thread.Sleep(10);
                 Console.WriteLine("[1] STARTUP SEQUENCE");
-                Console.WriteLine("[2] REACTOR STATUS");
-                Console.WriteLine("[3] LOGS");
+                Console.WriteLine("[2] REACTOR STATUS (not available)");
+                Console.WriteLine("[3] LOGS (not available either dang");
                 Console.WriteLine("[4] EMERGENCY PROGRAMS");
                 Console.WriteLine("[5] MANUAL");
                 Console.WriteLine("[6] QUIT");
@@ -472,6 +473,7 @@ namespace StoryParts
                     Console.WriteLine("Reading Reaction Sensors");
                     Thread.Sleep(230);
                     Program.reactorStarted++;
+                    Program.thread.Start();
                     Program.minute += 7;
                     Console.Clear();
                     Program.DataLine();
@@ -577,7 +579,151 @@ namespace StoryParts
         }
         public static void EmergencyPrograms()
         {
+            Console.Clear();
+            Program.DataLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("EMERGENCY PROCEDURES");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Please Select a Command:");
+            Console.WriteLine();
+            Console.WriteLine("[ENGAGE] Control Rods");
+            Console.WriteLine("[VENT] into Atmosphere");
+            Console.WriteLine("[DUMP] Core Contents");
+            Console.WriteLine("[BACK]");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Engage [ANTI RESONANCE] Emitters");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            string input = Console.ReadLine();
+            //should set core rise to a smaller/negative number to cool reactor
+            if (input == "engage")
+            {
 
+            }
+            else if (input == "vent")
+            {
+
+            }
+            //sets reactorStarted to zero
+            else if (input == "dump")
+            {
+                Console.WriteLine();
+                Console.Write("Engaging Failsafe Locks");
+                Program.staggerText("...");
+                Console.WriteLine();
+                Console.Write("Opening Core Valves");
+                Program.staggerText(".....");
+                Program.coreTemp = 250;
+                Program.reactorStarted--;
+                Console.Clear();
+                Program.DataLine();
+                Console.WriteLine();
+                Console.WriteLine("Engaging Failsafe Locks...");
+                Console.WriteLine();
+                Console.WriteLine("Opening Core Valves.....");
+                Console.WriteLine();
+                Console.Write("Engaging Fission Prohibitors");
+                Program.staggerText("..");
+                Console.WriteLine();
+                Console.WriteLine("Core Dump Complete");
+                Console.WriteLine("REACTOR OFFLINE");
+                Console.WriteLine();
+                Console.WriteLine("Press [ENTER] to Clear");
+                Console.WriteLine();
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    EmergencyPrograms();
+                }
+                else
+                {
+                    EmergencyPrograms();
+                }
+            }
+            //haha funny half life reference
+            else if (input == "anti resonance")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine();
+                Console.WriteLine("ARE YOU SURE? ACTIVIATING ANTI-RESONANCE EMITTERS WILL HAVE UNFORSEEN CONSEQUENCES");
+                Console.WriteLine();
+                Console.WriteLine("[YES]");
+                Console.WriteLine("[NO]");
+                Console.WriteLine();
+                Console.ForegroundColor= ConsoleColor.DarkGreen;
+                input = Console.ReadLine();
+                if (input == "yes")
+                {
+                    Console.Clear();
+                    Program.DataLine();
+                    Console.WriteLine();
+                    Console.Write("Disengaging Safety Locks");
+                    Program.staggerText("...");
+                    Console.WriteLine();
+                    Console.Write("Diverting Power to Emitters");
+                    Program.staggerText(".....");
+                    Console.WriteLine();
+                    Console.Write("Starting Up Anti-Mass Generators");
+                    Program.staggerText("......");
+                    Console.WriteLine();
+                    Console.Write("Calibrating");
+                    Program.staggerText("..");
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("FIRING ANTI-RESONANCE EMITTERS IN 5");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("4");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("3");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("2");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("1");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("FIRING!");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    Console.ResetColor();
+                    Console.WriteLine("(You hear a huge bang deep from the facility, and feel an unnatural chill run down your spine.)");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("(Whatever you did caused something big to explode and rip open a hole in the structure of space and time itself.)");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("(You question why ANSINE had something that dangerous at all, much less how they even made it in the first place.)");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("(You hear gunfire from right down the hall, and then unearthly screams, and then silence.)");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                    Console.WriteLine("(Whatever you did got people killed, and it seems like your luck ran out.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("GAME OVER");
+                    Console.WriteLine("The ''DAMN YOU FREEMAN!'' Ending");
+                    Console.WriteLine();
+                    input = Console.ReadLine();
+                }
+                else
+                {
+                    EmergencyPrograms();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please Enter a Valid Command.");
+                Console.WriteLine("(Press [ENTER] to Continue.)");
+                input = Console.ReadLine();
+                if (input == "")
+                {
+                    EmergencyPrograms();
+                }
+                else
+                {
+                    EmergencyPrograms();
+                }
+            }
         }
         //currently unused
         public static void ReactorStatus()
